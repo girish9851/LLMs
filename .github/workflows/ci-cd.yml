@@ -38,6 +38,18 @@ jobs:
           context: .
           push: true
           tags: girish9851/agent-app:latest
+      
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          docker system prune -af
+      
+      - name: Download Model
+ 	run: |
+    	  mkdir -p models
+    	  run: python -c "from app.utils.download_model import download_model; download_model()"
 
       - name: Install Locust and Run Load Test
         run: |
