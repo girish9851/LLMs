@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from app.agents.base_agent import get_agent
+from app.model_utils import download_model
 
 app = FastAPI()
+
+model_path = download_model()
 
 @app.get("/")
 def health_check():
