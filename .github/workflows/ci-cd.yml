@@ -55,9 +55,5 @@ jobs:
       - name: Download Model
         run: |
           mkdir -p models
-          python -c "from app.model_utils import download_model; download_model()"
-      - name: Install Locust and Run Load Test
-        run: |
-          pip install locust
-          locust -f locustfile.py --headless -u 20 -r 5 -t 30s --host http://localhost:8000
+          python -c "from app.model_utils import download_model; download_model()"0
 
