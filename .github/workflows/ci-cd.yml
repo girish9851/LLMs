@@ -38,7 +38,9 @@ jobs:
           context: .
           push: true
           tags: girish9851/agent-app:latest
-     - name: Install Locust and Run Load Test
+
+      - name: Install Locust and Run Load Test
         run: |
           pip install locust
           locust -f locustfile.py --headless -u 20 -r 5 -t 30s --host http://localhost:8000
+
