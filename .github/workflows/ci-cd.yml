@@ -45,7 +45,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf /usr/local/share/boost
           docker system prune -af
-      
+
       - name: Download Model
  	run: |
 	  mkdir -p models
