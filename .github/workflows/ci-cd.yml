@@ -55,5 +55,5 @@ jobs:
       - name: Download Model
         run: |
           mkdir -p models
-          python -c "from app.model_utils import download_model; download_model()"0
+          python -c "from app.model_utils import download_model; download_model()"
 
